@@ -44,7 +44,6 @@
       const res = await fetch(C.API_URL, { method: 'POST', body: JSON.stringify({ aktion: 'login', code: code }) });
       const r = await res.json();
       if (r && r.ok) {
-        sessionStorage.setItem('lscsd_sitzung', r.sitzung);
         zeige('Angemeldet als ' + r.name + '.', 'ok');
       } else {
         zeige('Anmeldung fehlgeschlagen. Bitte erneut versuchen.', 'fehler');
